@@ -1,0 +1,11 @@
+{
+  "type": "datasource",
+  "name": "Cloudera Manager",
+  "id": "clouderamanager",
+
+  "module": "plugins/clouderamanager/module",
+  "staticRoot": ".",
+
+  "metrics": true,
+  "annotations": false
+}
