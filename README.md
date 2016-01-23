@@ -1,43 +1,43 @@
 Cloudera Manager Datasource for Grafana 3.x
 ===========================================
 
-This plugin for (Grafana)[http://grafana.org] provides a basic datasource for querying metrics
+This plugin for [Grafana](http://grafana.org) provides a basic datasource for querying metrics
 available in Cloudera Manager through its "tsquery" language. It supports Cloudera Manager API
 versions v4 and higher.
 
-This project is open source pursuant to the (Apache License, Version 2.0)[https://www.apache.org/licenses/LICENSE-2.0].
+This project is open source pursuant to the [Apache License, Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
 
 Installation
 ------------
 
-Method #1:
+1. Method #1:
 
-1. Clone this repository into your Grafana plugins directory:
+  1. Clone this repository into your Grafana plugins directory:
 
 ```
 cd path/to/grafana/plugins/directory
 git clone git@github.com:foursquare/datasource-plugin-clouderamanager.git
 ```
 
-2. Restart the Grafana server.
+  2. Restart the Grafana server.
 
-Method #2:
+2. Method #2:
 
-1. Clone this repository in some directory:
+  1. Clone this repository in some directory:
 
 ```
 git clone git@github.com:foursquare/datasource-plugin-clouderamanager.git
 ```
 
-2. Point Grafana at the repository directory by editing `grafana.ini` to contain:
+  2. Point Grafana at the repository directory by editing `grafana.ini` to contain:
 
 ```
 [plugin.clouderamanager]
 path = /path/to/some/directory/datasource-plugin-clouderamanager
 ```
 
-3. Restart the Grafana server.
+  3. Restart the Grafana server.
 
 
 Configuration
