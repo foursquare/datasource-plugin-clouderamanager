@@ -15,10 +15,10 @@ Installation
 
   1. Clone this repository into your Grafana plugins directory:
 
-```
-cd path/to/grafana/plugins/directory
-git clone git@github.com:foursquare/datasource-plugin-clouderamanager.git
-```
+  ```
+  cd path/to/grafana/plugins/directory
+  git clone git@github.com:foursquare/datasource-plugin-clouderamanager.git
+  ```
 
   2. Restart the Grafana server.
 
@@ -26,16 +26,16 @@ git clone git@github.com:foursquare/datasource-plugin-clouderamanager.git
 
   1. Clone this repository in some directory:
 
-```
-git clone git@github.com:foursquare/datasource-plugin-clouderamanager.git
-```
+  ```
+  git clone git@github.com:foursquare/datasource-plugin-clouderamanager.git
+  ```
 
   2. Point Grafana at the repository directory by editing `grafana.ini` to contain:
 
-```
-[plugin.clouderamanager]
-path = /path/to/some/directory/datasource-plugin-clouderamanager
-```
+  ```
+  [plugin.clouderamanager]
+  path = /path/to/some/directory/datasource-plugin-clouderamanager
+  ```
 
   3. Restart the Grafana server.
 
