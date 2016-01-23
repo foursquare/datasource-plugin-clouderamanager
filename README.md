@@ -6,6 +6,7 @@ available in Cloudera Manager through its "tsquery" language. It supports Cloude
 versions v4 and higher.
 
 This project is open source pursuant to the [Apache License, Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+It is copyright (C) 2015-2016 by Foursquare Labs, Inc.
 
 
 Installation
