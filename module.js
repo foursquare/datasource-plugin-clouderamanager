@@ -14,29 +14,19 @@
 define([
   './datasource',
   './query_ctrl',
-],
-function (ClouderaManagerDatasource) {
-  'use strict';
-
-  function ClouderaManagerMetricsQueryEditor() {
-    return {
-      controller: 'ClouderaManagerQueryCtrl',
-      templateUrl: 'public/plugins/clouderamanager/partials/query.editor.html'
-    };
-  }
-
+], function(datasource, query_ctrl) {
   function ClouderaManagerMetricsQueryOptions() {
-    return {templateUrl: 'public/plugins/clouderamanager/partials/query.options.html'};
   }
+  ClouderaManagerMetricsQueryOptions.templateUrl = 'partials/query.options.html';
 
   function ClouderaManagerConfigView() {
-    return {templateUrl: 'public/plugins/clouderamanager/partials/config.html'};
   }
+  ClouderaManagerConfigView.templateUrl = 'partials/config.html';
 
   return {
-    Datasource:               ClouderaManagerDatasource,
-    metricsQueryEditor:       ClouderaManagerMetricsQueryEditor,
-    metricsQueryOptions:      ClouderaManagerMetricsQueryOptions,
-    configView:               ClouderaManagerConfigView,
+    Datasource: datasource.ClouderaManagerDatasource,
+    ConfigCtrl: ClouderaManagerConfigView,
+    QueryCtrl: query_ctrl.ClouderaManagerQueryCtrl,
+    QueryOptionsCtrl: ClouderaManagerMetricsQueryOptions,
   };
 });

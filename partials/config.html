@@ -1,4 +1,5 @@
-<datasource-http-settings></datasource-http-settings>
+<datasource-http-settings current="ctrl.current">
+</datasource-http-settings>
 
 <h5>Cloudera Manager Settings</h5>
 
@@ -8,10 +9,10 @@
 			API Version
 		</li>
 		<li>
-			<select class="tight-form-input input-medium" ng-model="current.jsonData.cmAPIVersion">
+			<select class="tight-form-input input-medium" ng-model="ctrl.current.jsonData.cmAPIVersion">
 				<option value="v4-5">v4-5</option>
 				<option value="v6-10">v6-10</option>
-				<option value="v11+">v11+</option>
+				<option value="v11+">v11 or higher</option>
 			</select>
 		</li>
 	</ul>

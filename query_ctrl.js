@@ -12,18 +12,31 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 define([
-  'angular',
-],
-function (angular) {
-  'use strict';
+  'app/plugins/sdk',
+], function(sdk) {
+  var __extends = this.__extends || function (d, b) {
+    function __() { this.constructor = d; }
+    __.prototype = b.prototype;
+    d.prototype = new __();
+  };
 
-  var module = angular.module('grafana.controllers');
+  /** @ngInject **/
+  var ClouderaManagerQueryCtrl_super = sdk.QueryCtrl;
+  function ClouderaManagerQueryCtrl($scope, $injector)  {
+    ClouderaManagerQueryCtrl_super.call(this, $scope, $injector);
 
-  module.controller('ClouderaManagerQueryCtrl', function($scope) {
     $scope.init = function() {
       if ($scope.target) {
         $scope.target.target = $scope.target.target || '';
       }
     };
-  });
+
+    $scope.init();
+  }
+  __extends(ClouderaManagerQueryCtrl, ClouderaManagerQueryCtrl_super);
+  ClouderaManagerQueryCtrl.templateUrl = 'partials/query.editor.html';
+
+  return {
+    ClouderaManagerQueryCtrl: ClouderaManagerQueryCtrl,
+  };
 });

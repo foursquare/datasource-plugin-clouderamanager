@@ -12,13 +12,12 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 define([
-  'angular',
   'lodash',
   'jquery',
   'app/core/utils/datemath',
   'moment',
 ],
-function (angular, _, $, dateMath, moment) {
+function(_, $, dateMath, moment) {
   'use strict';
 
   /** @ngInject */
@@ -184,5 +183,7 @@ function (angular, _, $, dateMath, moment) {
     };
   }
   
-  return ClouderaManagerDatasource;
+  return {
+    ClouderaManagerDatasource: ClouderaManagerDatasource,
+  };
 });
