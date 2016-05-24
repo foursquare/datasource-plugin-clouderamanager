@@ -81,17 +81,34 @@ function(_, $, dateMath, moment) {
       var targetPromises = _(queryOptions.targets)
         .filter(function(target) { return target.target && !target.hide; })
         .map(function(target) {
-          var requestOptions = {
-            url: '/api/v' + self.apiVersion + '/timeseries',
-            params: {
-              query: target.target,
-              from: queryOptions.range.from.toJSON(),
-              to: queryOptions.range.to.toJSON(),
-            }
+          var url = '/api/v' + self.apiVersion + '/timeseries';
+          var query = {
+            query: target.target,
+            from: queryOptions.range.from.toJSON(),
+            to: queryOptions.range.to.toJSON(),
           };
 
           if (self.apiVersion >= 6) {
-            requestOptions.params.contentType = 'application/json';
+            query.contentType = 'application/json';
+          }
+
+          var requestOptions;
+          if (self.apiVersion >= 11) {
+            // Use POST method on API versions 11 and higher
+            // Parameters are passed via the body. This allows longer TSQUERY queries.
+            requestOptions = {
+              method: 'POST',
+              url: url,
+              data: query
+            };
+          } else {
+            // Use GET method for API versions prior to 11
+            // Parameters are passed via query string.
+            requestOptions = {
+              method: 'GET',
+              url: url,
+              params: query
+            };
           }
 
           return self._request(requestOptions).then(_.bind(self.convertResponse, self));
