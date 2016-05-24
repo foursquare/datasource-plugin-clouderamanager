@@ -1,11 +1,10 @@
-<query-editor-row ctrl="ctrl">
-	<li class="tight-form-flex-wrapper">
+<query-editor-row query-ctrl="ctrl">
+	<div class="gf-form">
 		<input type="text"
-		       class="tight-form-clear-input span10"
+		       class="gf-form-input"
 		       ng-model="ctrl.target.target"
 		       spellcheck='false' 
-		       ng-model-onblur
-		       ng-change="get_data()"
+		       ng-blur="ctrl.refresh()"
 	    ></input>
-    </li>
+	</div>
 </query-editor-row>
