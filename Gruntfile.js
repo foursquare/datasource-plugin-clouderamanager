@@ -63,7 +63,7 @@ module.exports = function(grunt) {
       expand: true,
       cwd: 'dist',
       src: '**/*',
-      dest: '/',
+      dest: '<%= pkg.name %>-<%= pkg.version %>/',
     });
 
     grunt.task.run('default');
