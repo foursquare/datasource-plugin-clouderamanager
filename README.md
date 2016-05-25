@@ -21,7 +21,15 @@ Installation
   git clone git@github.com:foursquare/datasource-plugin-clouderamanager.git
   ```
 
-  2. Restart the Grafana server.
+  2. Build the project:
+
+  ```
+  cd path/to/grafana/plugins/directory/datasource-plugin-clouderamanager
+  npm install
+  grunt
+  ```
+
+  3. Restart the Grafana server.
 
 2. Method #2:
 
@@ -31,14 +39,22 @@ Installation
   git clone git@github.com:foursquare/datasource-plugin-clouderamanager.git
   ```
 
-  2. Point Grafana at the repository directory by editing `grafana.ini` to contain:
+  2. Build the project:
+
+  ```
+  cd datasource-plugin-clouderamanager
+  npm install
+  grunt
+  ```
+
+  3. Point Grafana at the repository directory by editing `grafana.ini` to contain:
 
   ```
   [plugin.clouderamanager]
   path = /path/to/some/directory/datasource-plugin-clouderamanager
   ```
 
-  3. Restart the Grafana server.
+  4. Restart the Grafana server.
 
 
 Configuration

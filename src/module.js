@@ -11,22 +11,21 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
-define([
-  './datasource',
-  './query_ctrl',
-], function(datasource, query_ctrl) {
-  function ClouderaManagerMetricsQueryOptions() {
-  }
-  ClouderaManagerMetricsQueryOptions.templateUrl = 'partials/query.options.html';
 
-  function ClouderaManagerConfigView() {
-  }
-  ClouderaManagerConfigView.templateUrl = 'partials/config.html';
+import {ClouderaManagerDatasource} from './datasource';
+import {ClouderaManagerQueryCtrl} from './query_ctrl';
 
-  return {
-    Datasource: datasource.ClouderaManagerDatasource,
-    ConfigCtrl: ClouderaManagerConfigView,
-    QueryCtrl: query_ctrl.ClouderaManagerQueryCtrl,
-    QueryOptionsCtrl: ClouderaManagerMetricsQueryOptions,
-  };
-});
+class ClouderaManagerMetricsQueryOptions {
+}
+ClouderaManagerMetricsQueryOptions.templateUrl = 'partials/query.options.html';
+
+class ClouderaManagerConfigView {
+}
+ClouderaManagerConfigView.templateUrl = 'partials/config.html';
+
+export {
+  ClouderaManagerDatasource as Datasource,
+  ClouderaManagerConfigView as ConfigCtrl,
+  ClouderaManagerQueryCtrl as QueryCtrl,
+  ClouderaManagerMetricsQueryOptions as QueryOptionsCtrl,
+}
