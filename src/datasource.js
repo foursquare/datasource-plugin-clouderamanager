@@ -126,7 +126,14 @@ export function ClouderaManagerDatasource(instanceSettings, $q, backendSrv, temp
   // Convert the metadata returned from Cloudera Manager into the timeseries name for Grafana.
   this._makeTimeseriesName = function(metadata) {
     if (metadata.alias) {
-      return metadata.alias;
+      var alias = metadata.alias;
+      if (metadata.metricName) {
+        alias = alias.replace('%metricName%', metadata.metricName);
+      }
+      if (metadata.entityName) {
+        alias = alias.replace('%entityName%', metadata.entityName);
+      }
+      return alias;
     } else if (metadata.metricName && metadata.entityName) {
       return metadata.metricName + ' (' + metadata.entityName  + ')';
     } else if (metadata.metricName) {
