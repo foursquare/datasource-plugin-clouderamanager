@@ -18,7 +18,7 @@ import moment from 'moment';
 import * as dateMath from 'app/core/utils/datemath';
 
 /** @ngInject */
-export function ClouderaManagerDatasource(instanceSettings, $q, backendSrv) {
+export function ClouderaManagerDatasource(instanceSettings, $q, backendSrv, templateSrv) {
   this.url = instanceSettings.url;
   if (this.url.endsWith('/')) {
     this.url = this.url.substr(0, this.url.length - 1);
@@ -80,7 +80,7 @@ export function ClouderaManagerDatasource(instanceSettings, $q, backendSrv) {
       .map(function(target) {
         var url = '/api/v' + self.apiVersion + '/timeseries';
         var query = {
-          query: target.target,
+          query: templateSrv.replace(target.target, queryOptions.scopedVars),
           from: queryOptions.range.from.toJSON(),
           to: queryOptions.range.to.toJSON(),
         };
