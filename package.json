@@ -1,6 +1,6 @@
 {
   "name": "datasource-plugin-clouderamanager",
-  "version": "0.9.0",
+  "version": "0.9.1",
   "description": "Cloudera Manager datasource for Grafana 3.0.x",
   "repository": {
     "type": "git",
