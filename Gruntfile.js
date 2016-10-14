@@ -14,9 +14,9 @@ module.exports = function(grunt) {
         src: ['**/*', '!**/*.js', '!**/*.scss'],
         dest: 'dist'
       },
-      pluginDef: {
+      readme: {
         expand: true,
-        src: ['plugin.json', 'readme.md'],
+        src: ['readme.md'],
         dest: 'dist',
       },
     },
@@ -51,7 +51,7 @@ module.exports = function(grunt) {
   grunt.registerTask('default', [
     'clean',
     'copy:src_to_dist',
-    'copy:pluginDef',
+    'copy:readme',
     'babel'
   ]);
 
