@@ -52,16 +52,15 @@ npm install
 grunt
 ```
 
-To install in your Grafana server locally, either:
-
-1. Point Grafana at the repository directory by editing `grafana.ini` to contain:
+To install in your Grafana server locally, either point Grafana at the repository directory by
+editing `grafana.ini` to contain:
 
 ```
 [plugin.clouderamanager]
 path = /path/to/some/directory/datasource-plugin-clouderamanager
 ```
 
-2. Or symlink the repository directory into the Grafana server's plugin directory:
+Or symlink the repository directory into the Grafana server's plugin directory:
 
 ```
 cd /path/to/grafana/data/plugins
