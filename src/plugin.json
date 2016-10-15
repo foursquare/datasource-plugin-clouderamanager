@@ -1,7 +1,7 @@
 {
   "type": "datasource",
-  "name": "Cloudera Manager Datasource",
-  "id": "fsq-clouderamanager",
+  "name": "Cloudera Manager",
+  "id": "foursquare-clouderamanager-datasource",
 
   "info": {
     "description": "Cloudera Manager datasource",
@@ -23,7 +23,7 @@
     "plugins": []
   },
 
-  "module": "plugins/fsq-clouderamanager/module",
+  "module": "plugins/foursquare-clouderamanager-datasource/module",
   "staticRoot": ".",
 
   "metrics": true,
