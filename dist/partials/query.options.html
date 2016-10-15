@@ -1,0 +1,38 @@
+<section class="grafana-metric-options">
+	<div class="editor-row">
+		<div class="pull-left">
+			<div class="grafana-info-box">
+				<ul>
+					<li>
+						For more information: <a class="link" href="https://www.cloudera.com/documentation/enterprise/latest/topics/cm_dg_tsquery.html" target="_blank">Open the TSQuery documentation in a new tab.</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="clearfix"></div>
+	<div class="editor-row">
+		<div class="gf-form-inline">
+			<div class="gf-form">
+				<span class="gf-form-label width-12">
+					<i class="fa fa-info-circle"></i>
+					<a ng-click="ctrl.panelCtrl.toggleEditorHelp(1);" bs-tooltip="'click to show helpful info'" data-placement="bottom">
+						aliases
+					</a>
+				</span>
+			</div>
+		</div>
+	</div>
+	<div class="editor-row">
+		<div class="pull-left">
+
+			<div class="grafana-info-box span8" ng-if="ctrl.panelCtrl.editorHelpIndex === 1">
+				<h5>aliases</h5>
+				<ul>
+					<li>Add an alias for any timeseries by inserting <code>as "FOO"</code> after the SELECT portion of the TSQuery. Replace <code>FOO</code> with the alias you want.</li>
+					<li>Use <code>%metricName%</code> and <code>%entityName%</code> to substitute the metric name and entity name, respectively, into the alias. This is helpful for queries returning multiple timeseries.
+				</ul>
+			</div>
+		</div>
+	</div>
+</section>
