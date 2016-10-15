@@ -12,50 +12,11 @@ It is copyright (C) 2015-2016 by Foursquare Labs, Inc.
 Installation
 ------------
 
-1. Method #1:
+The easiest way to install this plugin is with `grafana-cli`. Just run the following command:
 
-  1. Clone this repository into your Grafana plugins directory:
-
-  ```
-  cd path/to/grafana/plugins/directory
-  git clone git@github.com:foursquare/datasource-plugin-clouderamanager.git
-  ```
-
-  2. Build the project:
-
-  ```
-  cd path/to/grafana/plugins/directory/datasource-plugin-clouderamanager
-  npm install
-  grunt
-  ```
-
-  3. Restart the Grafana server.
-
-2. Method #2:
-
-  1. Clone this repository in some directory:
-
-  ```
-  git clone git@github.com:foursquare/datasource-plugin-clouderamanager.git
-  ```
-
-  2. Build the project:
-
-  ```
-  cd datasource-plugin-clouderamanager
-  npm install
-  grunt
-  ```
-
-  3. Point Grafana at the repository directory by editing `grafana.ini` to contain:
-
-  ```
-  [plugin.clouderamanager]
-  path = /path/to/some/directory/datasource-plugin-clouderamanager
-  ```
-
-  4. Restart the Grafana server.
-
+```
+grafana-cli plugins install foursquare-clouderamanager-datasource
+```
 
 Configuration
 -------------
@@ -70,7 +31,6 @@ Configuration
 
 5. Cick "Save".
 
-
 Queries
 -------
 
@@ -82,6 +42,33 @@ This datasource is very minimal and so there is no autocompletion support.
 Read the [tsquery documentation](https://www.cloudera.com/documentation/enterprise/latest/topics/cm_dg_tsquery.html)
 to learn more about tsquery.
 
+Development
+-----------
+
+To compile, run the following commands:
+
+```
+npm install
+grunt
+```
+
+To install in your Grafana server locally, either:
+
+1. Point Grafana at the repository directory by editing `grafana.ini` to contain:
+
+```
+[plugin.clouderamanager]
+path = /path/to/some/directory/datasource-plugin-clouderamanager
+```
+
+2. Or symlink the repository directory into the Grafana server's plugin directory:
+
+```
+cd /path/to/grafana/data/plugins
+ln -s /path/to/some/directory/datasource-plugin-clouderamanager .
+```
+
+Then restart the Grafana server.
 
 Contributors
 ------------
